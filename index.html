@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bojan Krstić - Lična stranica</title>
+    <title data-i18n="pageTitle">Bojan Krstić - Lična stranica</title>
     <style>
         * {
             margin: 0;
@@ -50,7 +50,26 @@
         .content {
             padding: 50px 30px;
         }
-        
+
+        .language-switcher {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: #4a6491;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .language-switcher select {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cfd8dc;
+            font-size: 0.9rem;
+            color: #2c3e50;
+        }
+
         .owner-info {
             display: flex;
             flex-direction: column;
@@ -58,10 +77,22 @@
             margin-bottom: 40px;
         }
         
-        .owner-icon {
-            font-size: 4rem;
-            color: #2c3e50;
+        .owner-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
             margin-bottom: 20px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .owner-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
         }
         
         .owner-name {
@@ -82,6 +113,77 @@
             line-height: 1.6;
             color: #34495e;
             margin-bottom: 40px;
+        }
+
+        .projects-section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .projects-section h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .projects-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-column h4 {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4a6491;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-card {
+            background-color: #f8f9fb;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .project-card a {
+            color: #2c3e50;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        .project-card a:hover {
+            color: #2980b9;
+        }
+
+        .status {
+            align-self: flex-start;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .status-test {
+            background-color: #e67e22;
+        }
+
+        .status-progress {
+            background-color: #2980b9;
+        }
+
+        .status-zavrsen {
+            background-color: #229954;
         }
         
         .footer {
@@ -117,48 +219,182 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-user-circle"></i> Lična stranica</h1>
-            <p>Dobrodošli na moj lični prostor na internetu</p>
+            <h1><i class="fas fa-user-circle"></i> <span data-i18n="headerTitle">Lična stranica</span></h1>
+            <p data-i18n="headerSubtitle">Dobrodošli na moj lični prostor na internetu</p>
         </div>
         
         <div class="content">
+            <div class="language-switcher">
+                <label for="language-select" data-i18n="languageLabel">Jezik:</label>
+                <select id="language-select" aria-label="Language selector">
+                    <option value="sr-latn">Srpski (latinica)</option>
+                    <option value="sr-cyrl">Српски (ћирилица)</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
             <div class="owner-info">
-                <div class="owner-icon">
-                    <i class="fas fa-user-tie"></i>
+                <div class="owner-photo">
+                    <img src="BojanKrstic.png" alt="Bojan Krstić">
                 </div>
-                <h2 class="owner-name">Bojan Krstić</h2>
-                <p class="owner-title">Vlasnik ove stranice</p>
+                <h2 class="owner-name" data-i18n="ownerName">Bojan Krstić</h2>
+                <p class="owner-title" data-i18n="ownerTitle">Vlasnik ove stranice</p>
             </div>
             
             <div class="welcome-message">
-                <p>Ovo je moja lična stranica na internetu.</p>
-                <p>Stranica je u potpunosti u vlasništvu Bojana Krstića.</p>
-                <p>Hvala što ste posetili!</p>
+                <p data-i18n="welcome1">Ovo je moja lična stranica na internetu.</p>
+                <p data-i18n="welcome2">Stranica je u potpunosti u vlasništvu Bojana Krstića.</p>
+                <p data-i18n="welcome3">Hvala što ste posetili!</p>
+            </div>
+
+            <div class="projects-section">
+                <h3 data-i18n="worksHeading">Radovi</h3>
+                <div class="projects-columns">
+                    <div class="project-column">
+                        <h4 data-i18n="appsHeading">Aplikacije</h4>
+                        <div class="project-list">
+                            <div class="project-card">
+                                <a href="http://83-229-82-132.cloud-xip.com:8011/ui/login?return=%2Fui" target="_blank" rel="noopener noreferrer">Krstenica</a>
+                                <div class="status status-test" data-i18n="statusTest">Test</div>
+                            </div>
+                            <div class="project-card">
+                                <a href="http://83-229-82-132.cloud-xip.com/msisdn/" target="_blank" rel="noopener noreferrer">MSISDN</a>
+                                <div class="status status-progress" data-i18n="statusProgress">Progress</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-column">
+                        <h4 data-i18n="webHeading">Web sajtovi</h4>
+                        <div class="project-list">
+                            <div class="project-card">
+                                <a href="http://cerevac.rs" target="_blank" rel="noopener noreferrer">Cerevac</a>
+                                <div class="status status-zavrsen" data-i18n="statusDone">Završen</div>
+                            </div>
+                            <div class="project-card">
+                                <a href="http://83-229-82-132.cloud-xip.com/viseodigre/index.html#vesti" target="_blank" rel="noopener noreferrer">Više od igre</a>
+                                <div class="status status-test" data-i18n="statusTest">Test</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="signature">
-                <p>S poštovanjem,</p>
-                <p>Bojan Krstić</p>
+                <p data-i18n="signatureGreeting">S poštovanjem,</p>
+                <p data-i18n="ownerName">Bojan Krstić</p>
             </div>
         </div>
         
         <div class="footer">
-            <p>© 2023 Bojan Krstić. Sva prava zadržana.</p>
-            <p>Ova stranica je u potpunosti vlasništvo Bojana Krstića.</p>
+            <p data-i18n="footerRights">© 2023 Bojan Krstić. Sva prava zadržana.</p>
+            <p data-i18n="footerOwnership">Ova stranica je u potpunosti vlasništvo Bojana Krstića.</p>
         </div>
     </div>
     
     <script>
-        // Jednostavna animacija za ikonu
         document.addEventListener('DOMContentLoaded', function() {
-            const icon = document.querySelector('.owner-icon i');
-            
-            setInterval(() => {
-                icon.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    icon.style.transform = 'scale(1)';
-                }, 300);
-            }, 3000);
+            const portrait = document.querySelector('.owner-photo img');
+            if (portrait) {
+                setInterval(() => {
+                    portrait.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        portrait.style.transform = 'scale(1)';
+                    }, 300);
+                }, 3000);
+            }
+
+            const translations = {
+                'sr-latn': {
+                    pageTitle: 'Bojan Krstić - Lična stranica',
+                    headerTitle: 'Lična stranica',
+                    headerSubtitle: 'Dobrodošli na moj lični prostor na internetu',
+                    languageLabel: 'Jezik:',
+                    ownerName: 'Bojan Krstić',
+                    ownerTitle: 'Vlasnik ove stranice',
+                    welcome1: 'Ovo je moja lična stranica na internetu.',
+                    welcome2: 'Stranica je u potpunosti u vlasništvu Bojana Krstića.',
+                    welcome3: 'Hvala što ste posetili!',
+                    worksHeading: 'Radovi',
+                    appsHeading: 'Aplikacije',
+                    webHeading: 'Web sajtovi',
+                    statusTest: 'Test',
+                    statusProgress: 'Progress',
+                    statusDone: 'Završen',
+                    signatureGreeting: 'S poštovanjem,',
+                    footerRights: '© 2023 Bojan Krstić. Sva prava zadržana.',
+                    footerOwnership: 'Ova stranica je u potpunosti vlasništvo Bojana Krstića.'
+                },
+                'sr-cyrl': {
+                    pageTitle: 'Бојан Крстић - Лична страница',
+                    headerTitle: 'Лична страница',
+                    headerSubtitle: 'Добродошли на мој лични простор на интернету',
+                    languageLabel: 'Језик:',
+                    ownerName: 'Бојан Крстић',
+                    ownerTitle: 'Власник ове странице',
+                    welcome1: 'Ово је моја лична страница на интернету.',
+                    welcome2: 'Страница је у потпуности у власништву Бојана Крстића.',
+                    welcome3: 'Хвала што сте посетили!',
+                    worksHeading: 'Радови',
+                    appsHeading: 'Апликације',
+                    webHeading: 'Веб сајтови',
+                    statusTest: 'Тест',
+                    statusProgress: 'Прогрес',
+                    statusDone: 'Завршен',
+                    signatureGreeting: 'С поштовањем,',
+                    footerRights: '© 2023 Бојан Крстић. Сва права задржана.',
+                    footerOwnership: 'Ова страница је у потпуности власништво Бојана Крстића.'
+                },
+                'en': {
+                    pageTitle: 'Bojan Krstić - Personal Page',
+                    headerTitle: 'Personal Page',
+                    headerSubtitle: 'Welcome to my personal space on the internet',
+                    languageLabel: 'Language:',
+                    ownerName: 'Bojan Krstić',
+                    ownerTitle: 'Owner of this page',
+                    welcome1: 'This is my personal page on the internet.',
+                    welcome2: 'The site is fully owned by Bojan Krstić.',
+                    welcome3: 'Thank you for visiting!',
+                    worksHeading: 'Work',
+                    appsHeading: 'Applications',
+                    webHeading: 'Websites',
+                    statusTest: 'Test',
+                    statusProgress: 'In Progress',
+                    statusDone: 'Completed',
+                    signatureGreeting: 'Kind regards,',
+                    footerRights: '© 2023 Bojan Krstić. All rights reserved.',
+                    footerOwnership: 'This site is fully owned by Bojan Krstić.'
+                }
+            };
+
+            const langMap = {
+                'sr-latn': 'sr',
+                'sr-cyrl': 'sr-Cyrl',
+                en: 'en'
+            };
+
+            const languageSelect = document.getElementById('language-select');
+            const i18nElements = document.querySelectorAll('[data-i18n]');
+
+            function applyLanguage(lang) {
+                const dict = translations[lang] || translations['sr-latn'];
+                i18nElements.forEach(el => {
+                    const key = el.dataset.i18n;
+                    const value = dict[key];
+                    if (typeof value === 'string') {
+                        if (el.tagName.toLowerCase() === 'title') {
+                            document.title = value;
+                        } else {
+                            el.textContent = value;
+                        }
+                    }
+                });
+                document.documentElement.lang = langMap[lang] || 'sr';
+            }
+
+            languageSelect.addEventListener('change', event => {
+                applyLanguage(event.target.value);
+            });
+
+            applyLanguage(languageSelect.value);
         });
     </script>
 </body>
