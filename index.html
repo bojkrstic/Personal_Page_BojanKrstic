@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bojan Krstić - Lična stranica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 50px 20px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 50px 30px;
+        }
+        
+        .owner-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .owner-icon {
+            font-size: 4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .owner-name {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .owner-title {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .welcome-message {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 40px;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3498db;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .owner-name {
+                font-size: 2rem;
+            }
+            
+            .welcome-message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-user-circle"></i> Lična stranica</h1>
+            <p>Dobrodošli na moj lični prostor na internetu</p>
+        </div>
+        
+        <div class="content">
+            <div class="owner-info">
+                <div class="owner-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h2 class="owner-name">Bojan Krstić</h2>
+                <p class="owner-title">Vlasnik ove stranice</p>
+            </div>
+            
+            <div class="welcome-message">
+                <p>Ovo je moja lična stranica na internetu.</p>
+                <p>Stranica je u potpunosti u vlasništvu Bojana Krstića.</p>
+                <p>Hvala što ste posetili!</p>
+            </div>
+            
+            <div class="signature">
+                <p>S poštovanjem,</p>
+                <p>Bojan Krstić</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 Bojan Krstić. Sva prava zadržana.</p>
+            <p>Ova stranica je u potpunosti vlasništvo Bojana Krstića.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Jednostavna animacija za ikonu
+        document.addEventListener('DOMContentLoaded', function() {
+            const icon = document.querySelector('.owner-icon i');
+            
+            setInterval(() => {
+                icon.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 300);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
