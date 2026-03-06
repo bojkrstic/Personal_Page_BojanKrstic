@@ -152,6 +152,7 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            min-height: 170px;
         }
 
         .project-card a {
@@ -159,18 +160,32 @@
             font-weight: bold;
             text-decoration: none;
             font-size: 1.05rem;
+            overflow-wrap: anywhere;
         }
 
         .project-card a:hover {
             color: #2980b9;
         }
 
+        .project-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #4b5b68;
+        }
+
         .status {
             align-self: flex-start;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
             padding: 6px 14px;
             border-radius: 999px;
             font-size: 0.85rem;
             font-weight: bold;
+            min-width: 96px;
+            text-align: center;
+            white-space: nowrap;
             color: white;
         }
 
@@ -200,17 +215,139 @@
             color: #3498db;
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
+            body {
+                align-items: flex-start;
+                padding: 14px;
+            }
+
+            .header {
+                padding: 36px 18px;
+            }
+
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
+            }
+
+            .content {
+                padding: 36px 20px;
+            }
+
+            .owner-name {
+                font-size: 2.1rem;
+            }
+
+            .owner-title {
+                font-size: 1.1rem;
+            }
+
+            .welcome-message {
+                font-size: 1.3rem;
+            }
+
+            .projects-columns {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .language-switcher {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                font-size: 0.9rem;
+            }
+
+            .language-switcher select {
+                width: 100%;
+                max-width: 240px;
+            }
+
+            .owner-photo {
+                width: 130px;
+                height: 130px;
+            }
+
+            .project-card {
+                padding: 14px;
+                min-height: 160px;
+            }
+
+            .project-description {
+                font-size: 0.88rem;
+            }
+
+            .status {
+                font-size: 0.8rem;
+                padding: 5px 12px;
+                min-width: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 8px;
+            }
+
+            .header {
+                padding: 26px 14px;
+            }
+
+            .header h1 {
+                font-size: 1.7rem;
+                line-height: 1.25;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 24px 14px;
             }
             
             .owner-name {
-                font-size: 2rem;
+                font-size: 1.65rem;
+            }
+
+            .owner-title {
+                margin-bottom: 20px;
+                font-size: 1rem;
             }
             
             .welcome-message {
-                font-size: 1.2rem;
+                font-size: 1.05rem;
+                margin-bottom: 28px;
+            }
+
+            .projects-section h3 {
+                margin-bottom: 12px;
+            }
+
+            .project-column h4 {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .project-list {
+                gap: 12px;
+            }
+
+            .project-card a {
+                font-size: 0.98rem;
+            }
+
+            .project-description {
+                font-size: 0.84rem;
+                line-height: 1.45;
+            }
+
+            .signature {
+                font-size: 1rem;
             }
         }
     </style>
@@ -254,10 +391,12 @@
                         <div class="project-list">
                             <div class="project-card">
                                 <a href="http://83-229-82-132.cloud-xip.com:8011/ui/login?return=%2Fui" target="_blank" rel="noopener noreferrer">Krstenica</a>
+                                <p class="project-description" data-i18n="krstenicaDescription">Go API, HTMX GUI, PostgreSQL baza, Docker i Docker Compose. Hostovano na mom Kamatera serveru.</p>
                                 <div class="status status-test" data-i18n="statusTest">Test</div>
                             </div>
                             <div class="project-card">
                                 <a href="http://83-229-82-132.cloud-xip.com/msisdn/" target="_blank" rel="noopener noreferrer">MSISDN</a>
+                                <p class="project-description" data-i18n="msisdnDescription">Go Engine. Hostovano na mom Kamatera serveru.</p>
                                 <div class="status status-progress" data-i18n="statusProgress">Progress</div>
                             </div>
                         </div>
@@ -267,10 +406,12 @@
                         <div class="project-list">
                             <div class="project-card">
                                 <a href="http://cerevac.rs" target="_blank" rel="noopener noreferrer">Cerevac</a>
+                                <p class="project-description" data-i18n="cerevacDescription">JavaScript i HTML. Kupljen domen i hostovano na mom Kamatera serveru.</p>
                                 <div class="status status-zavrsen" data-i18n="statusDone">Završen</div>
                             </div>
                             <div class="project-card">
                                 <a href="http://83-229-82-132.cloud-xip.com/viseodigre/index.html#vesti" target="_blank" rel="noopener noreferrer">Više od igre</a>
+                                <p class="project-description" data-i18n="viseOdIgreDescription">Node.js, HTML i JavaScript. Hostovano na mom Kamatera serveru.</p>
                                 <div class="status status-test" data-i18n="statusTest">Test</div>
                             </div>
                         </div>
@@ -316,6 +457,10 @@
                     worksHeading: 'Radovi',
                     appsHeading: 'Aplikacije',
                     webHeading: 'Web sajtovi',
+                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL baza, Docker i Docker Compose. Hostovano na mom Kamatera serveru.',
+                    msisdnDescription: 'Go Engine. Hostovano na mom Kamatera serveru.',
+                    cerevacDescription: 'JavaScript i HTML. Kupljen domen i hostovano na mom Kamatera serveru.',
+                    viseOdIgreDescription: 'Node.js, HTML i JavaScript. Hostovano na mom Kamatera serveru.',
                     statusTest: 'Test',
                     statusProgress: 'Progress',
                     statusDone: 'Završen',
@@ -336,6 +481,10 @@
                     worksHeading: 'Радови',
                     appsHeading: 'Апликације',
                     webHeading: 'Веб сајтови',
+                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL база, Docker и Docker Compose. Хостовано на мом Kamatera серверу.',
+                    msisdnDescription: 'Go Engine. Хостовано на мом Kamatera серверу.',
+                    cerevacDescription: 'JavaScript и HTML. Купљен домен и хостовано на мом Kamatera серверу.',
+                    viseOdIgreDescription: 'Node.js, HTML и JavaScript. Хостовано на мом Kamatera серверу.',
                     statusTest: 'Тест',
                     statusProgress: 'Прогрес',
                     statusDone: 'Завршен',
@@ -356,6 +505,10 @@
                     worksHeading: 'Work',
                     appsHeading: 'Applications',
                     webHeading: 'Websites',
+                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL database, Docker, and Docker Compose. Hosted on my Kamatera server.',
+                    msisdnDescription: 'Go Engine. Hosted on my Kamatera server.',
+                    cerevacDescription: 'JavaScript and HTML. Domain purchased and hosted on my Kamatera server.',
+                    viseOdIgreDescription: 'Node.js, HTML, and JavaScript. Hosted on my Kamatera server.',
                     statusTest: 'Test',
                     statusProgress: 'In Progress',
                     statusDone: 'Completed',
