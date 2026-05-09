@@ -101,18 +101,41 @@
             margin-bottom: 10px;
         }
         
-        .owner-title {
-            font-size: 1.3rem;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-        
         .welcome-message {
             font-size: 1.5rem;
             line-height: 1.6;
             color: #34495e;
             margin-bottom: 40px;
+        }
+
+        .contact-section {
+            margin-bottom: 40px;
+            padding: 24px;
+            background-color: #f8f9fb;
+            border-radius: 12px;
+        }
+
+        .contact-section h3 {
+            margin-bottom: 14px;
+            color: #2c3e50;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: #34495e;
+            font-size: 1.05rem;
+        }
+
+        .contact-list a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
         }
 
         .projects-section {
@@ -123,6 +146,13 @@
         .projects-section h3 {
             margin-bottom: 15px;
             color: #2c3e50;
+        }
+
+        .projects-note {
+            margin-bottom: 18px;
+            color: #4b5b68;
+            font-size: 0.98rem;
+            line-height: 1.5;
         }
 
         .projects-columns {
@@ -237,12 +267,12 @@
                 font-size: 2.1rem;
             }
 
-            .owner-title {
-                font-size: 1.1rem;
-            }
-
             .welcome-message {
                 font-size: 1.3rem;
+            }
+
+            .contact-section {
+                padding: 20px;
             }
 
             .projects-columns {
@@ -314,14 +344,18 @@
                 font-size: 1.65rem;
             }
 
-            .owner-title {
-                margin-bottom: 20px;
-                font-size: 1rem;
-            }
-            
             .welcome-message {
                 font-size: 1.05rem;
                 margin-bottom: 28px;
+            }
+
+            .contact-section {
+                margin-bottom: 28px;
+                padding: 18px 14px;
+            }
+
+            .contact-list {
+                font-size: 0.96rem;
             }
 
             .projects-section h3 {
@@ -357,7 +391,7 @@
     <div class="container">
         <div class="header">
             <h1><i class="fas fa-user-circle"></i> <span data-i18n="headerTitle">Lična stranica</span></h1>
-            <p data-i18n="headerSubtitle">Dobrodošli na moj lični prostor na internetu</p>
+            <p data-i18n="headerSubtitle">Dobrodošli</p>
         </div>
         
         <div class="content">
@@ -374,29 +408,35 @@
                     <img src="BojanKrstic.png" alt="Bojan Krstić">
                 </div>
                 <h2 class="owner-name" data-i18n="ownerName">Bojan Krstić</h2>
-                <p class="owner-title" data-i18n="ownerTitle">Vlasnik ove stranice</p>
             </div>
             
             <div class="welcome-message">
-                <p data-i18n="welcome1">Ovo je moja lična stranica na internetu.</p>
-                <p data-i18n="welcome2">Stranica je u potpunosti u vlasništvu Bojana Krstića.</p>
-                <p data-i18n="welcome3">Hvala što ste posetili!</p>
+                <p data-i18n="welcome1">Diplomirani inženjer elektrotehnike.</p>
+            </div>
+
+            <div class="contact-section">
+                <h3 data-i18n="contactHeading">Kontakt</h3>
+                <div class="contact-list">
+                    <p><span data-i18n="phoneLabel">Telefon:</span> <a href="tel:+381631048103">0631048103</a></p>
+                    <p><span data-i18n="emailLabel">Email:</span> <a href="mailto:bojkrstic@gmail.com">bojkrstic@gmail.com</a></p>
+                </div>
             </div>
 
             <div class="projects-section">
                 <h3 data-i18n="worksHeading">Radovi</h3>
+                <p class="projects-note" data-i18n="worksNote">Svi prikazani projekti hostovani su na mom Kamatera serveru.</p>
                 <div class="projects-columns">
                     <div class="project-column">
                         <h4 data-i18n="appsHeading">Aplikacije</h4>
                         <div class="project-list">
                             <div class="project-card">
                                 <a href="http://83-229-82-132.cloud-xip.com:8011/ui/login?return=%2Fui" target="_blank" rel="noopener noreferrer">Krstenica</a>
-                                <p class="project-description" data-i18n="krstenicaDescription">Go API, HTMX GUI, PostgreSQL baza, Docker i Docker Compose. Hostovano na mom Kamatera serveru.</p>
+                                <p class="project-description" data-i18n="krstenicaDescription">Go API, HTMX GUI, PostgreSQL baza, Docker i Docker Compose.</p>
                                 <div class="status status-test" data-i18n="statusTest">Test</div>
                             </div>
                             <div class="project-card">
                                 <a href="http://83-229-82-132.cloud-xip.com/msisdn/" target="_blank" rel="noopener noreferrer">MSISDN</a>
-                                <p class="project-description" data-i18n="msisdnDescription">Go Engine. Hostovano na mom Kamatera serveru.</p>
+                                <p class="project-description" data-i18n="msisdnDescription">Go Engine.</p>
                                 <div class="status status-progress" data-i18n="statusProgress">Progress</div>
                             </div>
                         </div>
@@ -406,17 +446,22 @@
                         <div class="project-list">
                             <div class="project-card">
                                 <a href="http://cerevac.rs" target="_blank" rel="noopener noreferrer">Cerevac</a>
-                                <p class="project-description" data-i18n="cerevacDescription">JavaScript i HTML. Kupljen domen i hostovano na mom Kamatera serveru.</p>
+                                <p class="project-description" data-i18n="cerevacDescription">JavaScript i HTML.</p>
                                 <div class="status status-zavrsen" data-i18n="statusDone">Završen</div>
                             </div>
                             <div class="project-card">
                                 <a href="https://www.tecta.rs" target="_blank" rel="noopener noreferrer">Tecta</a>
-                                <p class="project-description" data-i18n="tectaDescription">JavaScript i HTML. Kupljen domen i hostovano na mom Kamatera serveru.</p>
+                                <p class="project-description" data-i18n="tectaDescription">JavaScript i HTML.</p>
+                                <div class="status status-zavrsen" data-i18n="statusDone">Završen</div>
+                            </div>
+                            <div class="project-card">
+                                <a href="https://www.balufamily.rs/" target="_blank" rel="noopener noreferrer">Balu Family</a>
+                                <p class="project-description" data-i18n="baluFamilyDescription">Sajt je razvijen u React / Vite okruženju, uz build i razvojno okruženje kroz Node.js. Rešenje je postavljeno kao brz i moderan statički frontend optimizovan za prikaz, performanse i SEO, a hostovano je na Kamatera serveru.</p>
                                 <div class="status status-zavrsen" data-i18n="statusDone">Završen</div>
                             </div>
                             <div class="project-card">
                                 <a href="http://83-229-82-132.cloud-xip.com/viseodigre/index.html#vesti" target="_blank" rel="noopener noreferrer">Više od igre</a>
-                                <p class="project-description" data-i18n="viseOdIgreDescription">Node.js, HTML i JavaScript. Hostovano na mom Kamatera serveru.</p>
+                                <p class="project-description" data-i18n="viseOdIgreDescription">Node.js, HTML i JavaScript.</p>
                                 <div class="status status-test" data-i18n="statusTest">Test</div>
                             </div>
                         </div>
@@ -431,8 +476,7 @@
         </div>
         
         <div class="footer">
-            <p data-i18n="footerRights">© 2023 Bojan Krstić. Sva prava zadržana.</p>
-            <p data-i18n="footerOwnership">Ova stranica je u potpunosti vlasništvo Bojana Krstića.</p>
+            <p data-i18n="footerClosing">Prezentacija</p>
         </div>
     </div>
     
@@ -452,77 +496,80 @@
                 'sr-latn': {
                     pageTitle: 'Bojan Krstić - Lična stranica',
                     headerTitle: 'Lična stranica',
-                    headerSubtitle: 'Dobrodošli na moj lični prostor na internetu',
+                    headerSubtitle: 'Dobrodošli',
                     languageLabel: 'Jezik:',
                     ownerName: 'Bojan Krstić',
-                    ownerTitle: 'Vlasnik ove stranice',
-                    welcome1: 'Ovo je moja lična stranica na internetu.',
-                    welcome2: 'Stranica je u potpunosti u vlasništvu Bojana Krstića.',
-                    welcome3: 'Hvala što ste posetili!',
+                    welcome1: 'Diplomirani inženjer elektrotehnike.',
+                    contactHeading: 'Kontakt',
+                    phoneLabel: 'Telefon:',
+                    emailLabel: 'Email:',
                     worksHeading: 'Radovi',
+                    worksNote: 'Svi prikazani projekti hostovani su na mom Kamatera serveru.',
                     appsHeading: 'Aplikacije',
                     webHeading: 'Web sajtovi',
-                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL baza, Docker i Docker Compose. Hostovano na mom Kamatera serveru.',
-                    msisdnDescription: 'Go Engine. Hostovano na mom Kamatera serveru.',
-                    cerevacDescription: 'JavaScript i HTML. Kupljen domen i hostovano na mom Kamatera serveru.',
-                    tectaDescription: 'JavaScript i HTML. Kupljen domen i hostovano na mom Kamatera serveru.',
-                    viseOdIgreDescription: 'Node.js, HTML i JavaScript. Hostovano na mom Kamatera serveru.',
+                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL baza, Docker i Docker Compose.',
+                    msisdnDescription: 'Go Engine.',
+                    cerevacDescription: 'JavaScript i HTML.',
+                    tectaDescription: 'JavaScript i HTML.',
+                    baluFamilyDescription: 'Sajt je razvijen u React / Vite okruženju, uz build i razvojno okruženje kroz Node.js. Rešenje je postavljeno kao brz i moderan statički frontend optimizovan za prikaz, performanse i SEO, a hostovano je na Kamatera serveru.',
+                    viseOdIgreDescription: 'Node.js, HTML i JavaScript.',
                     statusTest: 'Test',
                     statusProgress: 'Progress',
                     statusDone: 'Završen',
                     signatureGreeting: 'S poštovanjem,',
-                    footerRights: '© 2023 Bojan Krstić. Sva prava zadržana.',
-                    footerOwnership: 'Ova stranica je u potpunosti vlasništvo Bojana Krstića.'
+                    footerClosing: 'Prezentacija'
                 },
                 'sr-cyrl': {
                     pageTitle: 'Бојан Крстић - Лична страница',
                     headerTitle: 'Лична страница',
-                    headerSubtitle: 'Добродошли на мој лични простор на интернету',
+                    headerSubtitle: 'Добродошли',
                     languageLabel: 'Језик:',
                     ownerName: 'Бојан Крстић',
-                    ownerTitle: 'Власник ове странице',
-                    welcome1: 'Ово је моја лична страница на интернету.',
-                    welcome2: 'Страница је у потпуности у власништву Бојана Крстића.',
-                    welcome3: 'Хвала што сте посетили!',
+                    welcome1: 'Дипломирани инжењер електротехнике.',
+                    contactHeading: 'Контакт',
+                    phoneLabel: 'Телефон:',
+                    emailLabel: 'Имејл:',
                     worksHeading: 'Радови',
+                    worksNote: 'Сви приказани пројекти хостовани су на мом Kamatera серверу.',
                     appsHeading: 'Апликације',
                     webHeading: 'Веб сајтови',
-                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL база, Docker и Docker Compose. Хостовано на мом Kamatera серверу.',
-                    msisdnDescription: 'Go Engine. Хостовано на мом Kamatera серверу.',
-                    cerevacDescription: 'JavaScript и HTML. Купљен домен и хостовано на мом Kamatera серверу.',
-                    tectaDescription: 'JavaScript и HTML. Купљен домен и хостовано на мом Kamatera серверу.',
-                    viseOdIgreDescription: 'Node.js, HTML и JavaScript. Хостовано на мом Kamatera серверу.',
+                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL база, Docker и Docker Compose.',
+                    msisdnDescription: 'Go Engine.',
+                    cerevacDescription: 'JavaScript и HTML.',
+                    tectaDescription: 'JavaScript и HTML.',
+                    baluFamilyDescription: 'Сајт је развијен у React / Vite окружењу, уз build и развојно окружење кроз Node.js. Решење је постављено као брз и модеран статички frontend оптимизован за приказ, перформансе и SEO, а хостовано је на Kamatera серверу.',
+                    viseOdIgreDescription: 'Node.js, HTML и JavaScript.',
                     statusTest: 'Тест',
                     statusProgress: 'Прогрес',
                     statusDone: 'Завршен',
                     signatureGreeting: 'С поштовањем,',
-                    footerRights: '© 2023 Бојан Крстић. Сва права задржана.',
-                    footerOwnership: 'Ова страница је у потпуности власништво Бојана Крстића.'
+                    footerClosing: 'Презентација'
                 },
                 'en': {
                     pageTitle: 'Bojan Krstić - Personal Page',
                     headerTitle: 'Personal Page',
-                    headerSubtitle: 'Welcome to my personal space on the internet',
+                    headerSubtitle: 'Welcome',
                     languageLabel: 'Language:',
                     ownerName: 'Bojan Krstić',
-                    ownerTitle: 'Owner of this page',
-                    welcome1: 'This is my personal page on the internet.',
-                    welcome2: 'The site is fully owned by Bojan Krstić.',
-                    welcome3: 'Thank you for visiting!',
+                    welcome1: 'Graduate Electrical Engineer.',
+                    contactHeading: 'Contact',
+                    phoneLabel: 'Phone:',
+                    emailLabel: 'Email:',
                     worksHeading: 'Work',
+                    worksNote: 'All displayed projects are hosted on my Kamatera server.',
                     appsHeading: 'Applications',
                     webHeading: 'Websites',
-                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL database, Docker, and Docker Compose. Hosted on my Kamatera server.',
-                    msisdnDescription: 'Go Engine. Hosted on my Kamatera server.',
-                    cerevacDescription: 'JavaScript and HTML. Domain purchased and hosted on my Kamatera server.',
-                    tectaDescription: 'JavaScript and HTML. Domain purchased and hosted on my Kamatera server.',
-                    viseOdIgreDescription: 'Node.js, HTML, and JavaScript. Hosted on my Kamatera server.',
+                    krstenicaDescription: 'Go API, HTMX GUI, PostgreSQL database, Docker, and Docker Compose.',
+                    msisdnDescription: 'Go Engine.',
+                    cerevacDescription: 'JavaScript and HTML.',
+                    tectaDescription: 'JavaScript and HTML.',
+                    baluFamilyDescription: 'The site was developed in a React / Vite environment, with build and development handled through Node.js. The solution is set up as a fast, modern static frontend optimized for presentation, performance, and SEO, and it is hosted on a Kamatera server.',
+                    viseOdIgreDescription: 'Node.js, HTML, and JavaScript.',
                     statusTest: 'Test',
                     statusProgress: 'In Progress',
                     statusDone: 'Completed',
                     signatureGreeting: 'Kind regards,',
-                    footerRights: '© 2023 Bojan Krstić. All rights reserved.',
-                    footerOwnership: 'This site is fully owned by Bojan Krstić.'
+                    footerClosing: 'Presentation'
                 }
             };
 
